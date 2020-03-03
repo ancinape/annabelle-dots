@@ -1,0 +1,47 @@
+/* vim:ft=css */
+configuration {
+	display-run: "Run";
+	display-drun: "Apps";
+	display-window: "Window";
+	show-icons: true;
+	icon-theme: "Papirus";
+	modi: "window,drun,run,ssh";
+        font: "Iosevka 18";
+        bw: 1;
+        terminal: "kitty";
+        drun-match-fields: "name#generic#exec#categories";
+        levenshtein-sort: true;
+        sidebar-mode: true;
+        combi-modi: "drun#run#ssh";
+        matching: "fuzzy";
+        theme: "~/.cache/wal/colors-rofi-dark.rasi";
+        combi-hide-mode-prefix: true;
+}
+
+#inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+    background-color: #00000000;
+}
+
+#window {
+	border: 1;
+	border-radius: 12px;
+	padding: 30;
+
+	width: 50%;
+	height: 30%;
+	lines: 3;
+	columns: 1;
+}
+
+#element {
+    background-color: #00000000;
+    border: 3;
+    border-radius: 12px;
+    padding: 10 0 10 10 ;
+}
+
+#element selected {
+    background-color: #B04A4F;
+    text-color: #0f1013;
+}	
