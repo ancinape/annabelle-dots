@@ -1,0 +1,29 @@
+#!/bin/bash                                                              
+#/usr/bin/blurlock                                                                         
+#depends on: imagemagick, i3lock, scrot                                  
+#https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/cqilnv3                                                      
+                                                                         
+IMAGE=/tmp/lockscreen.png                                                
+TEXT=/tmp/locktext.png                                                   
+ICON=/home/frederick/.i3/death-star.png                                  
+
+scrot $IMAGE                                                             
+convert $IMAGE -scale 10% -scale 1000% -fill black -colorize 25% $IMAGE  
+[ -f $TEXT ] || {                                                        
+	convert -size 600x120 xc:black \
+		-font Auretech \
+		-pointsize 56 \
+		-fill red \ #-stroke black \ #-strokewidth 2 \
+		-gravity center \
+		-annotate +0-4 'CLASSIFIED\nIMPERIAL DEVICE' $TEXT;
+}                                                                        
+convert $IMAGE $TEXT -gravity center -geometry +0+230 -composite $IMAGE  
+convert $IMAGE $ICON -gravity center -composite -matte $IMAGE            
+i3lock -u -i $IMAGE                                                      
+rm $IMAGE                                                                
+rm $TEXT    
+
+# sleep 1 adds a small delay to prevent possible race conditions with suspend
+sleep 1
+
+exit 0
