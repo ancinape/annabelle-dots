@@ -5,7 +5,7 @@
                                                                          
 IMAGE=/tmp/lockscreen.png                                                
 TEXT=/tmp/locktext.png                                                   
-ICON=/home/frederick/.i3/death-star.png                                  
+ICON=~/.i3/death-star.png                                  
 
 scrot $IMAGE                                                             
 convert $IMAGE -scale 10% -scale 1000% -fill black -colorize 25% $IMAGE  
