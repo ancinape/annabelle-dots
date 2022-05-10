@@ -5,7 +5,7 @@ Dotfiles for a simple and purple-ish i3 setup.
 
 Princess Annabelle is the nickname of one of my laptops. It was the first device I installed Linux on. Thus, many of these dotfiles still have their original comments and defaults.
 
-I used to be in a Star Wars phase. There are accents of the Empire (in [blurlock](/i3/blurlock) and [workspaces](/polybar/config)) in Annabelle.
+I used to be in a Star Wars phase. There are accents of the Empire in [blurlock](/i3/blurlock) and [workspaces](/polybar/config).
 
 ---
 
